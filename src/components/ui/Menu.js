@@ -1,7 +1,7 @@
 import { useWindowWidth } from '@react-hook/window-size';
 import React, { useState, useEffect } from 'react';
 import { Collapse } from 'react-collapse';
-import { IoIosArrowDown, IoIosArrowUp } from 'react-icons/io';
+import { IoIosArrowDown } from 'react-icons/io';
 
 export default function Menu({ title, items }) {
   const [isOpen, setIsOpen] = useState([]);
@@ -20,7 +20,7 @@ export default function Menu({ title, items }) {
     if (!isOpen && windowWidth > 768) {
       setIsOpen(true);
     }
-  }, [windowWidth]);
+  }, [windowWidth, isOpen]);
 
   return (
     <section>
